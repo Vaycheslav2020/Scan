@@ -1,0 +1,16 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.sectionHead {
+  padding: 60px 540px 0 0;
+  background: url("../../images/home-image-1.png") top right no-repeat;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.description {
+  margin: 20px 150px 70px 0;
+  font-size: 20px;
+}

@@ -1,0 +1,27 @@
+@import "../../../assets/style/theme.scss";
+
+.box {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.register {
+  opacity: 0.4;
+}
+
+.line {
+  margin: 0 20px;
+  width: 2px;
+  align-self: normal;
+  background-color: $Secondary-color-2;
+  border-radius: 5px;
+}
+
+.login {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: $Secondary-color-2;
+  border-radius: 5px;
+  color: $Base-color-2;
+}

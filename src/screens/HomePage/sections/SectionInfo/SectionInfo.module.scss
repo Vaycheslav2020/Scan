@@ -1,0 +1,42 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.section {
+  padding-top: 100px;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.slide {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  padding: 70px 29px 15px 29px;
+}
+
+.swiperWrapper {
+  padding: 20px !important;
+}
+
+.swiperSlide {
+  height: auto !important;
+  flex-grow: 1;
+}
+
+.slideButton {
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}

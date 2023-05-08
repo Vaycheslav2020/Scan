@@ -1,0 +1,22 @@
+@import "../../assets/style/theme.scss";
+@import "../../assets/style/mixin.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nav {
+  margin: 0 auto;
+  user-select: none;
+}
+
+.link {
+  letter-spacing: 0.01em;
+  color: $Base-color-2;
+  margin-right: 49px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

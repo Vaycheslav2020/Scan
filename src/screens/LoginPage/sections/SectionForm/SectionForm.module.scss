@@ -1,0 +1,79 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.form {
+  min-width: 429px;
+  background-color: $Base-color-3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 25px 25px 39px 25px;
+  margin-right: 80px;
+}
+
+.links {
+  margin-bottom: 52px;
+  display: flex;
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 8px 19px;
+  color: $Secondary-color-4;
+  border-bottom: 2px solid $Secondary-color-4;
+  margin-right: 15px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+._active {
+  color: $Base-color-1;
+  border-color: $Base-color-1;
+}
+
+.button {
+  width: 100%;
+  margin: 30px 0 15px;
+}
+
+.recover {
+  width: 100%;
+  display: inline-block;
+  color: $Secondary-color-3;
+  font-size: 14px;
+  text-decoration-line: underline;
+  text-align: center;
+}
+
+.accounts {
+  margin-top: 30px;
+
+  & a {
+    width: 96px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(89, 112, 255, 0.51);
+    border-radius: 3px;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  & > span {
+    font-size: 16px;
+    color: $Secondary-color-5;
+  }
+}
+
+.accounts_wrapper {
+  display: flex;
+  margin-top: 15px;
+}

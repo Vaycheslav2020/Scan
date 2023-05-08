@@ -1,0 +1,9 @@
+@import "../../assets/style/theme.scss";
+@import "../../assets/style/mixin.scss";
+
+.card {
+  background-color: $Base-color-3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}

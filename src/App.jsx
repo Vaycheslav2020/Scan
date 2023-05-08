@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router";
+import { Routes, Route } from "react-router";
 import "./App.scss";
 // components
 import Header from "./Layouts/Header/Header";
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="*" element={<h1 style={{fontSize: "56px"}}>404</h1>} />
+        <Route path="*" element={<h1 style={{fontSize: "220px", textAlign: "center"}}>404</h1>} />
       </Routes>
       <Footer />
     </div>

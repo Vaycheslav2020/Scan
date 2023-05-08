@@ -1,0 +1,39 @@
+@import "../../assets/style/theme.scss";
+@import "../../assets/style/mixin.scss";
+
+.labelCheckbox {
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: $Base-color-2;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.labelCheckbox::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+  background: transparent;
+  border: 1px solid $Base-color-2;
+  margin-right: 17px;
+  transition: all 300ms ease;
+}
+
+.checkbox:checked + .labelCheckbox::before {
+  content: url("./icon/checked.png");
+}
+
+.labelCheckbox:active::before {
+  transform: scale(0.5);
+}
+
+.checkbox {
+  display: none;
+}

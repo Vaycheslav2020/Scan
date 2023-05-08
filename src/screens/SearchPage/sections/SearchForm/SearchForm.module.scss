@@ -1,0 +1,16 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.form {
+  background: $Base-color-3;
+  padding: 30px 40px;
+  margin-top: 47px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.input {
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: $Base-color-2;
+}

@@ -1,8 +1,7 @@
 import style from "./SearchPage.module.scss";
 
-import Document from "./images/Document.svg";
-import Folders from "./images/Folders.svg";
 import SearchForm from "./sections/SearchForm/SearchForm";
+import SectionImage from "./sections/SectionImage/SectionImage";
 
 const SearchPage = () => {
   return (
@@ -16,10 +15,7 @@ const SearchPage = () => {
         </p>
         <SearchForm />
       </section>
-      <div>
-        <img src={Document} alt="icon document" />
-        <img src={Folders} alt="icon document" />
-      </div>
+      <SectionImage />
     </main>
   );
 };

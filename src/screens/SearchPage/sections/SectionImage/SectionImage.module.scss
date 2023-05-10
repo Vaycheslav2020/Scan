@@ -1,0 +1,18 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+}
+
+.pictures {
+  margin-left: 55px;
+}

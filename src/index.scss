@@ -93,6 +93,14 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+select {
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

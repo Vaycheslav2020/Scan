@@ -1,0 +1,24 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.title {
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  margin-top: 44px;
+  margin-bottom: 36px;
+}
+
+.description {
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.illustration {
+  margin-left: 215px;
+}

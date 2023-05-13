@@ -1,0 +1,87 @@
+@import "../../../../assets/style/theme.scss";
+@import "../../../../assets/style/mixin.scss";
+
+.section {
+  padding-bottom: 107px;
+}
+
+.title {
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  margin-bottom: 17px;
+}
+
+.textInfo {
+  font-size: 18px;
+  color: $Secondary-color-5;
+  letter-spacing: 0.02em;
+  margin-bottom: 27px;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0 29px;
+}
+
+.swiperWrapper {
+  border-radius: 10px;
+  border: 2px solid $Base-color-1;
+}
+
+.parametersSlide {
+  padding: 17px 28px;
+  background-color: $Base-color-1;
+
+  & span {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    color: $Base-color-3;
+  }
+}
+
+.swiperSlide {
+  height: auto !important;
+  padding: 17px 15px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 17px;
+    bottom: 17px;
+    width: 2px;
+    background: $Secondary-color-5;
+    opacity: 0.4;
+  }
+
+  & span {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.slideButton {
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.prev {
+  left: -15px;
+}
+.next {
+  right: -15px;
+}

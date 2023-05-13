@@ -1,0 +1,89 @@
+@import "../../assets/style/theme.scss";
+@import "../../assets/style/mixin.scss";
+
+.document {
+  width: 50%;
+  background: $Base-color-3;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 19px 30px 35px;
+  margin-right: 38px;
+  margin-bottom: 38px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.head {
+  margin-bottom: 24px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: $Secondary-color-5;
+
+  span {
+    margin-right: 14px;
+  }
+
+  a {
+    text-decoration-line: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+}
+
+.mark {
+  display: inline-block;
+  background: $Secondary-color-1;
+  border-radius: 5px;
+  padding: 4px 12px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  margin: 14px 0;
+}
+
+.poster {
+  width: 100%;
+  margin: 14px 0 20px;
+}
+
+.paragraph {
+  margin-bottom: 25px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  opacity: 0.5;
+}
+
+.footerDocument {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: $Secondary-color-5;
+  }
+}
+
+.sourceLink {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: $Base-color-2;
+  background: $Secondary-color-2;
+  border-radius: 5px;
+  transition: all 300ms ease;
+
+  &:hover {
+    background-color: $Secondary-color-1;
+    transform: scale(1.03);
+  }
+}

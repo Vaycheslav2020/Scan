@@ -1,0 +1,21 @@
+@import "../../assets/style/theme.scss";
+@import "../../assets/style/mixin.scss";
+
+.main {
+  padding-bottom: 109px;
+}
+
+.documentList {
+  display: flex;
+  padding-top: 58px;
+}
+
+.titleList {
+  font-size: 30px;
+  letter-spacing: 0.02em;
+}
+
+.buttonList {
+  display: block;
+  margin: 0 auto;
+}

@@ -9,8 +9,8 @@ import "swiper/scss";
 import Watch from "../../icons/watch.png";
 import Magnifier from "../../icons/magnifier.png";
 import Shield from "../../icons/shield.png";
-import ArrowLeft from "../../icons/arrow-left.png";
-import ArrowRight from "../../icons/arrow-right.png";
+import ArrowLeft from "../../../icons/arrow-left.png";
+import ArrowRight from "../../../icons/arrow-right.png";
 // component
 import SlideCardInfo from "../../../../shared/SlideCardInfo/SlideCardInfo";
 

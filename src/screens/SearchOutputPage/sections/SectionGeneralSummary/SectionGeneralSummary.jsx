@@ -4,7 +4,7 @@ import ArrowLeft from "../../../icons/arrow-left.png";
 import ArrowRight from "../../../icons/arrow-right.png";
 // swiper
 import { Navigation } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/scss";
 

@@ -2,19 +2,16 @@ import style from "./AuthorizedBlock.module.scss";
 //
 import userPhoto from "./icon/user.png";
 //
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 // store
 import { setAuth } from "../../../store/isAuth";
 
 const AuthorizedBlock = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleClick = () => {
     localStorage.clear();
     dispatch(setAuth());
-    navigate("/");
   };
 
   return (

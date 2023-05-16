@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route } from "react-router";
 import { setAuth } from "./store/isAuth";
 import "./App.scss";
@@ -12,18 +12,29 @@ import SearchPage from "./screens/SearchPage/SearchPage";
 import SearchOutputPage from "./screens/SearchOutputPage/SearchOutputPage";
 
 function App() {
+  const { isAuth } = useSelector((state) => state.isAuth);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAuth());
   });
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/account/login" element={<LoginPage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/documents" element={<SearchOutputPage />} />
+        <Route
+          path="/account/login"
+          element={isAuth ? <HomePage /> : <LoginPage />}
+        />
+        <Route
+          path="/search"
+          element={isAuth ? <SearchPage /> : <LoginPage />}
+        />
+        <Route
+          path="/documents"
+          element={isAuth ? <SearchOutputPage /> : <LoginPage />}
+        />
         <Route
           path="*"
           element={

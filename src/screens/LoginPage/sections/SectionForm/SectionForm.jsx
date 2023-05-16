@@ -1,10 +1,9 @@
 import style from "./SectionForm.module.scss";
-// 
-import { Link, useNavigate } from "react-router-dom";
+//
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 // store
 import { handleLogin, handlePassword } from "../../formSlice";
-import { setAuth } from "../../../../store/isAuth";
 import { onAuth } from "../../service/index";
 // icon
 import Google from "../../images/Google.svg";
@@ -18,15 +17,12 @@ const SectionForm = () => {
   const { loginValue, passwordValue, fieldValidationErrors } = useSelector(
     (state) => state.formState
   );
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     onAuth(event, loginValue, passwordValue);
     dispatch(handleLogin(""));
     dispatch(handlePassword(""));
-    dispatch(setAuth());
-    navigate("/");
   };
 
   return (

@@ -1,4 +1,7 @@
 import axios from "axios";
+import store from "../../../store/store";
+import { setAuth } from "../../../store/isAuth";
+
 export async function onAuth(event, login, pass) {
   event.preventDefault();
   try {
@@ -12,6 +15,7 @@ export async function onAuth(event, login, pass) {
     if (response.status === 200) {
       localStorage.setItem("accessToken", response.data.accessToken);
       localStorage.setItem("expire", response.data.expire);
+      store.dispatch(setAuth());
     }
   } catch (error) {
     console.error(error);

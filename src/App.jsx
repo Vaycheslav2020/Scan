@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router";
-import { setAuth } from "./store/isAuth";
+import { Navigate } from "react-router-dom";
 import "./App.scss";
 // components
 import Header from "./Layouts/Header/Header";
@@ -11,12 +11,8 @@ import LoginPage from "./screens/LoginPage/LoginPage";
 import SearchPage from "./screens/SearchPage/SearchPage";
 import SearchOutputPage from "./screens/SearchOutputPage/SearchOutputPage";
 
-function App() {
+const App = () => {
   const { isAuth } = useSelector((state) => state.isAuth);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(setAuth());
-  });
 
   return (
     <div className="App">
@@ -25,15 +21,15 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route
           path="/account/login"
-          element={isAuth ? <HomePage /> : <LoginPage />}
+          element={isAuth ? <Navigate to="/" /> : <LoginPage />}
         />
         <Route
           path="/search"
-          element={isAuth ? <SearchPage /> : <LoginPage />}
+          element={isAuth ? <SearchPage /> : <Navigate to="/account/login" />}
         />
         <Route
           path="/documents"
-          element={isAuth ? <SearchOutputPage /> : <LoginPage />}
+          element={isAuth ? <SearchOutputPage /> : <Navigate to="/account/login" />}
         />
         <Route
           path="*"

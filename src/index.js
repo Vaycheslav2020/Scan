@@ -8,6 +8,11 @@ import reportWebVitals from "./reportWebVitals";
 //
 import store from "./store/store";
 import { Provider } from "react-redux";
+import { setAuth } from "./store/isAuth";
+
+window.onload = () => {
+  store.dispatch(setAuth())
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

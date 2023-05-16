@@ -11,7 +11,6 @@ const SectionTariff = () => {
       <h2 className={style.title}>наши тарифы</h2>
       <div className={style.cardWrapper}>
         <TariffCard
-          checked={true}
           title="Beginner"
           description="Для небольшого исследования"
           icon={BeginnerIcon}

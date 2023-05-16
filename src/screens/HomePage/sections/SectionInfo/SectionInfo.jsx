@@ -1,10 +1,9 @@
 import style from "./SectionInfo.module.scss";
 // Import Swiper React components
 import { Navigation } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/scss";
-
 // images
 import Watch from "../../icons/watch.png";
 import Magnifier from "../../icons/magnifier.png";
@@ -15,7 +14,6 @@ import ArrowRight from "../../../icons/arrow-right.png";
 import SlideCardInfo from "../../../../shared/SlideCardInfo/SlideCardInfo";
 
 const SectionInfo = () => {
-  const swiper = useSwiper();
   return (
     <section className={style.section}>
       <div className="container">

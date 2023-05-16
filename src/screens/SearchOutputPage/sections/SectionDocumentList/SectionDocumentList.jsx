@@ -1,6 +1,6 @@
 import style from "./SectionDocumentList.module.scss";
 
 const SectionDocumentList = () => {
-  return
-}
+  return;
+};
 export default SectionDocumentList;

@@ -1,5 +1,5 @@
 import style from "./SectionImage.module.scss";
-
+//
 import Document from "../../images/Document.svg";
 import Folders from "../../images/Folders.svg";
 import Pictures from "../../images/search-bg.png";

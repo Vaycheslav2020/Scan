@@ -1,6 +1,7 @@
 import style from "./CheckBox.module.scss";
 
-const CheckBox = ({ children, name, id, checked = false }) => {
+const CheckBox = ({ children, name, id, isChecked = false }) => {
+
   return (
     <>
       <input
@@ -8,7 +9,7 @@ const CheckBox = ({ children, name, id, checked = false }) => {
         type="checkbox"
         name={name}
         id={id}
-        // checked={checked}
+        defaultChecked={isChecked}
       />
       <label className={style.labelCheckbox} htmlFor={id}>
         {children}

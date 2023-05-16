@@ -1,4 +1,5 @@
 import style from "./TariffCard.module.scss";
+import { useSelector } from "react-redux";
 
 // components
 import CardHead from "./CardHead/CardHead";
@@ -6,8 +7,9 @@ import CardPrice from "./CardPrice/CardPrice";
 import Button from "../Button/Button";
 
 const TariffCard = (props) => {
+  
+  const check = useSelector((state) => state.activeTariff.value);
   const {
-    checked,
     title,
     description,
     icon,
@@ -18,6 +20,7 @@ const TariffCard = (props) => {
     instalment,
     structureItem,
   } = props;
+  const checked = check === title;
 
   return (
     <div

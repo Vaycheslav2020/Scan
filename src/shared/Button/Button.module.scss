@@ -12,4 +12,9 @@
     background-color: $Secondary-color-1;
     transform: scale(1.03);
   }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

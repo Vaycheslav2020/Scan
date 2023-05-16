@@ -1,9 +1,17 @@
 import style from "./SearchPage.module.scss";
-
+//
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+// components
 import SearchForm from "./sections/SearchForm/SearchForm";
 import SectionImage from "./sections/SectionImage/SectionImage";
 
 const SearchPage = () => {
+  const navigate = useNavigate();
+  const { isAuth } = useSelector((state) => state.isAuth);
+  if (isAuth === false) {
+    return navigate("/");
+  }
   return (
     <main className={style.main + " container"}>
       <section className={style.sectionForm}>

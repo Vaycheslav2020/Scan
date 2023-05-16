@@ -3,7 +3,7 @@ import style from "./HomePage.module.scss";
 import SectionHead from "./sections/SectionHead/SectionHead";
 import SectionInfo from "./sections/SectionInfo/SectionInfo";
 import SectionImage from "./sections/SectionImage/SectionImage";
-import SectionTariff from "./sections/SectionTariff/SectionTariff"
+import SectionTariff from "./sections/SectionTariff/SectionTariff";
 
 const HomePage = () => {
   return (

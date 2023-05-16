@@ -1,4 +1,5 @@
 import style from "./SectionImage.module.scss";
+//
 import Background from "../../images/home-image-2.png";
 
 const SectionImage = () => {

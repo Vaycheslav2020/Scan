@@ -1,5 +1,5 @@
 import style from "./SearchForm.module.scss";
-
+// components
 import Input from "../../../../shared/Input/Input";
 import CheckBox from "../../../../shared/CheckBox/CheckBox";
 import Select from "../../../../shared/Select/Select";
@@ -7,7 +7,7 @@ import Button from "../../../../shared/Button/Button";
 // picker
 import React, { useState } from "react";
 import DatePicker from "react-date-picker";
-
+// picker style
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
 
@@ -64,13 +64,13 @@ const SearchForm = () => {
         </div>
       </div>
       <div className={style.wrapper}>
-        <CheckBox id="completeness" name="completeness" checked={true}>
+        <CheckBox id="completeness" name="completeness" isChecked={true}>
           Признак максимальной полноты
         </CheckBox>
-        <CheckBox id="businessContext" name="businessContext" checked={true}>
+        <CheckBox id="businessContext" name="businessContext" isChecked={true}>
           Упоминания в бизнес-контексте
         </CheckBox>
-        <CheckBox id="mainRole" name="mainRole" checked={true}>
+        <CheckBox id="mainRole" name="mainRole" isChecked={true}>
           Главная роль в публикации
         </CheckBox>
         <CheckBox id="riskFactors" name="riskFactors">
@@ -79,14 +79,14 @@ const SearchForm = () => {
         <CheckBox id="technicalNews" name="technicalNews">
           Включать технические новости рынков
         </CheckBox>
-        <CheckBox id="announcements" name="announcements" checked={true}>
+        <CheckBox id="announcements" name="announcements" isChecked={true}>
           Включать анонсы и календари
         </CheckBox>
         <CheckBox id="summaries" name="summaries">
           Включать сводки новостей
         </CheckBox>
 
-        <div  className={style.submitWrap}>
+        <div className={style.submitWrap}>
           <Button>Поиск</Button>
           <p className={style.hint}>* Обязательные к заполнению поля</p>
         </div>

@@ -7,7 +7,9 @@ const Document = ({ Image }) => {
         <span>13.09.2021</span>
         <a>Комсомольская правда KP.RU</a>
       </div>
-      <h5 className={style.title}>Скиллфэктори - лучшая онлайн-школа для будущих айтишников</h5>
+      <h5 className={style.title}>
+        Скиллфэктори - лучшая онлайн-школа для будущих айтишников
+      </h5>
       <div className={style.mark}>
         <span>Технические новости</span>
       </div>

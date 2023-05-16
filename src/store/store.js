@@ -1,8 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-// import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+// 
+import checkedTariff from "../screens/HomePage/tariffSlice";
+import formSlice from "../screens/LoginPage/formSlice";
+import isAuth  from "./isAuth";
 
 export default configureStore({
   reducer: {
-    // counter: counterReducer,
+    activeTariff: checkedTariff,
+    formState: formSlice,
+    isAuth: isAuth,
   },
 });

@@ -9,10 +9,14 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import { setAuth } from "./store/isAuth";
+import isAuth from "./store/isAuth";
 
 window.onload = () => {
-  store.dispatch(setAuth())
-}
+  store.dispatch(setAuth());
+  const { accessToken } = localStorage;
+  if (isAuth && accessToken) {
+  }
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

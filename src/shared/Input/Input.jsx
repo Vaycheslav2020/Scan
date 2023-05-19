@@ -1,4 +1,5 @@
 import style from "./Input.module.scss";
+
 import { useState } from "react";
 
 const Input = ({
@@ -41,7 +42,7 @@ const Input = ({
         onBlur={handleBlur}
         value={inputValue}
       />
-      <span>{isError ? errorMassage : null}</span>
+      <span>{isError ? errorMassage : "error"}</span>
     </label>
   );
 };

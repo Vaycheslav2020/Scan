@@ -1,6 +1,7 @@
 import axios from "axios";
-import store from "../../../store/store";
-import { setAuth } from "../../../store/isAuth";
+import store from "../store/store";
+import { setAuth } from "../store/isAuth";
+import { handleFormErrors } from "../screens/LoginPage/formSlice";
 
 export async function onAuth(event, login, pass) {
   event.preventDefault();
@@ -18,6 +19,7 @@ export async function onAuth(event, login, pass) {
       store.dispatch(setAuth());
     }
   } catch (error) {
+    store.dispatch(handleFormErrors());
     console.error(error);
   }
 }

@@ -4,7 +4,7 @@
 .label {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin: 20px 0 2px;
   font-size: 16px;
   letter-spacing: 0.02em;
   color: $Secondary-color-5;
@@ -26,6 +26,10 @@
     }
   }
 
+  span {
+    visibility: hidden;
+  }
+
   &.error {
     color: $Secondary-color-6;
     & input {
@@ -36,8 +40,9 @@
     }
 
     span {
+      visibility: visible;
       text-align: center;
-      color: inherit
+      color: inherit;
     }
   }
 }

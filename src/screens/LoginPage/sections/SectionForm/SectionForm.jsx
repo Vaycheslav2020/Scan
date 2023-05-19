@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 // store
 import { handleLogin, handlePassword } from "../../formSlice";
-import { onAuth } from "../../service/index";
+import { onAuth } from "../../../../service/authorization";
 // icon
 import Google from "../../images/Google.svg";
 import Facebook from "../../images/Facebook.svg";
@@ -57,11 +57,13 @@ const SectionForm = () => {
         onInputChange={(value) => dispatch(handlePassword(value))}
         inputValue={passwordValue}
         errorMassage="Неправильный пароль"
-        error={fieldValidationErrors.pass}
+        error={fieldValidationErrors.password}
       />
 
+      {fieldValidationErrors.error? fieldValidationErrors.error : null}
+
       <Button
-        isDisabled={!fieldValidationErrors.login || !fieldValidationErrors.pass}
+        isDisabled={!fieldValidationErrors.login || !fieldValidationErrors.password}
         className={style.button}
       >
         Войти

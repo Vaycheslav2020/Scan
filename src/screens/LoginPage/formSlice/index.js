@@ -7,7 +7,8 @@ export const formSlice = createSlice({
     passwordValue: "",
     fieldValidationErrors: {
       login: false,
-      pass: false,
+      password: false,
+      error: "",
     },
   },
   reducers: {
@@ -19,19 +20,27 @@ export const formSlice = createSlice({
         state.fieldValidationErrors.login = true;
       }
       state.loginValue = val;
+      state.fieldValidationErrors.error = null;
     },
     handlePassword: (state, value) => {
       const val = value.payload.replace(/\s/g, "");
       const res = /^[A-Za-z0-9]\w{6,}$/;
       if (!res.test(String(val))) {
-        state.fieldValidationErrors.pass = false;
+        state.fieldValidationErrors.password = false;
       } else {
-        state.fieldValidationErrors.pass = true;
+        state.fieldValidationErrors.password = true;
       }
       state.passwordValue = val;
+      state.fieldValidationErrors.error = null;
+    },
+    handleFormErrors: (state) => {
+      state.fieldValidationErrors.error = (
+        <p style={{ color: "red" }}>Неправильный логин или пароль</p>
+      );
     },
   },
 });
 
-export const { handleLogin, handlePassword } = formSlice.actions;
+export const { handleLogin, handlePassword, handleFormErrors } =
+  formSlice.actions;
 export default formSlice.reducer;

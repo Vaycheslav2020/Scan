@@ -15,7 +15,7 @@ const LimitInfoBlock = () => {
 
   return (
     <div className={style.box}>
-    {accountData === {} ? <Loader /> : null}
+    {Object.keys(accountData).length === 0 ? <Loader /> : null}
       <div className={style.textWrapper}>
         <p className={style.text}>Использовано компаний</p>
         <span className={style.used}>{accountData?.usedCompanyCount}</span>

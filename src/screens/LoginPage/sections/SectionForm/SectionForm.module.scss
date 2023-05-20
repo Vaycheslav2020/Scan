@@ -58,31 +58,3 @@
   text-decoration-line: underline;
   text-align: center;
 }
-
-.accounts {
-  margin-top: 30px;
-
-  & a {
-    width: 96px;
-    height: 31px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(89, 112, 255, 0.51);
-    border-radius: 3px;
-    margin-right: 10px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  & > span {
-    font-size: 16px;
-    color: $Secondary-color-5;
-  }
-}
-
-.accounts_wrapper {
-  display: flex;
-  margin-top: 15px;
-}

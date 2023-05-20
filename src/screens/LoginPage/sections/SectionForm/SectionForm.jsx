@@ -5,13 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 // store
 import { handleLogin, handlePassword } from "../../formSlice";
 import { onAuth } from "../../../../service/authorization";
-// icon
-import Google from "../../images/Google.svg";
-import Facebook from "../../images/Facebook.svg";
-import Yandex from "../../images/Yandex.svg";
 // components
 import Input from "../../../../shared/Input/Input";
 import Button from "../../../../shared/Button/Button";
+import Accounts from "../Accounts/Accounts";
 
 const SectionForm = () => {
   const { loginValue, passwordValue, fieldValidationErrors } = useSelector(
@@ -71,20 +68,7 @@ const SectionForm = () => {
       <Link className={style.recover} to={"/recover%password"}>
         Восстановить пароль
       </Link>
-      <div className={style.accounts}>
-        <span>Войти через:</span>
-        <div className={style.accounts_wrapper}>
-          <a>
-            <img src={Google} alt="google" />
-          </a>
-          <a>
-            <img src={Facebook} alt="Facebook" />
-          </a>
-          <a>
-            <img src={Yandex} alt="Yandex" />
-          </a>
-        </div>
-      </div>
+      <Accounts />
     </form>
   );
 };

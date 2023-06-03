@@ -1,7 +1,5 @@
 import style from "./Input.module.scss";
 
-import { useState } from "react";
-
 const Input = ({
   label,
   className = "",
@@ -13,23 +11,10 @@ const Input = ({
   errorMassage,
   error,
 }) => {
-  const handleChange = (e) => {
-    onInputChange(e.target.value);
-  };
-
-  const [isError, setError] = useState(false);
-
-  const handleBlur = () => {
-    setError(!error);
-  };
-  const handleInput = () => {
-    setError(false);
-  };
-
   return (
-    <label
+    <div
       className={
-        style.label + " " + className + " " + (isError ? style.error : null)
+        style.label + " " + className + " " + (error ? style.error : null)
       }
     >
       {label ? label : null}
@@ -37,13 +22,11 @@ const Input = ({
         type={type}
         name={name}
         placeholder={placeholder}
-        onChange={handleChange}
-        onInput={handleInput}
-        onBlur={handleBlur}
+        onChange={onInputChange}
         value={inputValue}
       />
-      <span>{isError ? errorMassage : "error"}</span>
-    </label>
+      <span>{error ? errorMassage : "error"}</span>
+    </div>
   );
 };
 export default Input;

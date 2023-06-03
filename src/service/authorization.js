@@ -1,10 +1,8 @@
 import axios from "axios";
 import store from "../store/store";
 import { setAuth } from "../store/isAuth";
-import { handleFormErrors } from "../screens/LoginPage/formSlice";
 
-export async function onAuth(event, login, pass) {
-  event.preventDefault();
+export async function onAuth(login, pass) {
   try {
     const response = await axios.post(
       "https://gateway.scan-interfax.ru/api/v1/account/login",
@@ -19,7 +17,6 @@ export async function onAuth(event, login, pass) {
       store.dispatch(setAuth());
     }
   } catch (error) {
-    store.dispatch(handleFormErrors());
     console.error(error);
   }
 }

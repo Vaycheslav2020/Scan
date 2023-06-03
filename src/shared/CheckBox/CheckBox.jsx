@@ -1,6 +1,6 @@
 import style from "./CheckBox.module.scss";
 
-const CheckBox = ({ children, name, id, isChecked = false }) => {
+const CheckBox = ({ onChange, isChecked ,children, name, id, isDefaultChecked = false }) => {
 
   return (
     <>
@@ -9,7 +9,9 @@ const CheckBox = ({ children, name, id, isChecked = false }) => {
         type="checkbox"
         name={name}
         id={id}
-        defaultChecked={isChecked}
+        onChange={(e)=>{onChange(e.target.checked)}}
+        checked={isChecked}
+        // defaultChecked={isDefaultChecked}
       />
       <label className={style.labelCheckbox} htmlFor={id}>
         {children}

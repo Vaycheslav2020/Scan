@@ -28,6 +28,12 @@
     width: 242px;
     margin-top: 20px;
   }
+
+  & span {
+    font-size: 14px;
+    text-align-last: left;
+    margin-left: 20px;
+  }
 }
 
 .selectLabel {
@@ -47,6 +53,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 39px;
+  margin-bottom: 12px;
 
   & span {
     font-size: 18px;
@@ -64,7 +71,6 @@
   position: relative;
   margin-right: 20px;
   margin-top: 20px;
-  margin-bottom: 26px;
 
   &:last-child {
     margin-right: 0;
@@ -112,4 +118,22 @@
   font-size: 14px;
   letter-spacing: 0.03em;
   color: $Secondary-color-5;
+}
+
+.errorMassage {
+  visibility: hidden;
+  text-align: center;
+}
+
+.error {
+  span {
+    color: $Secondary-color-6;
+  }
+  & .picker {
+    border-color: $Secondary-color-6;
+    color: $Secondary-color-6;
+  }
+  & .errorMassage {
+    visibility: visible;
+  }
 }

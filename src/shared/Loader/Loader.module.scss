@@ -17,6 +17,7 @@
 
 .spin {
   display: block;
+  user-select: none;
   animation: rotateLoader 1400ms linear infinite;
 }
 

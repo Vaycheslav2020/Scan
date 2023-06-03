@@ -1,15 +1,14 @@
 import style from "./Select.module.scss";
 
-const Select = ({ child, className, name, id }) => {
+const Select = ({ options, onSelected, className, name, selected }) => {
   return (
     <div className={style.selectWrapper + " " + className}>
-      <select name={name} id={id}>
-        {child
-          ? child.map((children, idx) => {
-              const value = children.toLowerCase();
+      <select onChange={(e)=>{onSelected(e.target.value)}} name={name} value={selected}>
+        {options
+          ? options.map((children, idx) => {
               return (
-                <option key={idx} value={value}>
-                  {children}
+                <option key={idx} value={children.value}>
+                  {children.label}
                 </option>
               );
             })

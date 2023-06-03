@@ -65,6 +65,9 @@ button {
   padding: 0;
   border: none;
   cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 figure {

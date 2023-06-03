@@ -1,6 +1,7 @@
 import style from "./Button.module.scss";
 
 const Button = ({
+  type,
   children,
   onSend,
   className = null,
@@ -9,6 +10,7 @@ const Button = ({
 }) => {
   return (
     <button
+      type={type}
       className={style.button + " " + className}
       onClick={onSend}
       style={styleCustom}

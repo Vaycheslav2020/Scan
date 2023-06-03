@@ -1,9 +1,8 @@
 import style from "./SectionForm.module.scss";
 //
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-// store
-import { handleLogin, handlePassword } from "../../formSlice";
+import { useForm, Controller } from "react-hook-form";
+// service
 import { onAuth } from "../../../../service/authorization";
 // components
 import Input from "../../../../shared/Input/Input";
@@ -11,24 +10,21 @@ import Button from "../../../../shared/Button/Button";
 import Accounts from "../Accounts/Accounts";
 
 const SectionForm = () => {
-  const { loginValue, passwordValue, fieldValidationErrors } = useSelector(
-    (state) => state.formState
-  );
-  const dispatch = useDispatch();
+  const {
+    handleSubmit,
+    control,
+    reset,
+    getValues,
+    formState: { isDirty, isValid },
+  } = useForm({ mode: "onChange" });
 
-  const handleSubmit = (event) => {
-    onAuth(event, loginValue, passwordValue);
-    dispatch(handleLogin(""));
-    dispatch(handlePassword(""));
+  const onHandleSubmit = () => {
+    onAuth(getValues("login"), getValues("password"));
+    reset();
   };
 
   return (
-    <form
-      className={style.form}
-      onSubmit={(event) => {
-        handleSubmit(event);
-      }}
-    >
+    <form className={style.form} onSubmit={handleSubmit(onHandleSubmit)}>
       <div className={style.links}>
         <Link className={style.link + " " + style._active} to={"/login"}>
           Войти
@@ -38,31 +34,55 @@ const SectionForm = () => {
         </Link>
       </div>
 
-      <Input
-        label="Логин или номер телефона:"
-        type="text"
+      <Controller
         name="login"
-        onInputChange={(value) => dispatch(handleLogin(value))}
-        inputValue={loginValue}
-        errorMassage="Введите корректные данные"
-        error={fieldValidationErrors.login}
+        control={control}
+        rules={{
+          required: "Введите корректные данные",
+          minLength: {
+            value: 6,
+            message: "не менее 6 символов",
+          },
+        }}
+        defaultValue=""
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
+          <Input
+            label="Логин или номер телефона:"
+            type="text"
+            name="login"
+            onInputChange={onChange}
+            inputValue={value}
+            errorMassage={error?.message}
+            error={error}
+          />
+        )}
       />
-      <Input
-        label="Пароль:"
-        type="password"
+
+      <Controller
         name="password"
-        onInputChange={(value) => dispatch(handlePassword(value))}
-        inputValue={passwordValue}
-        errorMassage="Неправильный пароль"
-        error={fieldValidationErrors.password}
+        control={control}
+        rules={{
+          required: "Неправильный пароль",
+          minLength: {
+            value: 6,
+            message: "введите не менее 6 цифр или букв",
+          },
+        }}
+        defaultValue=""
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
+          <Input
+            label="Пароль:"
+            type="password"
+            name="password"
+            onInputChange={onChange}
+            inputValue={value}
+            errorMassage={error?.message}
+            error={error}
+          />
+        )}
       />
 
-      {fieldValidationErrors.error? fieldValidationErrors.error : null}
-
-      <Button
-        isDisabled={!fieldValidationErrors.login || !fieldValidationErrors.password}
-        className={style.button}
-      >
+      <Button isDisabled={!isDirty || !isValid} className={style.button}>
         Войти
       </Button>
       <Link className={style.recover} to={"/recover%password"}>

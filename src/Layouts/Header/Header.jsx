@@ -1,16 +1,24 @@
 import style from "./Header.module.scss";
 //
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 // logo
 import Logo from "../images/header-logo.png";
 // components
-import AuthorizationBlock from "./AuthorizationBlock/AuthorizationBlock";
-import AuthorizedBlock from "./AuthorizedBlock/AuthorizedBlock";
-import LimitInfoBlock from "./LimitInfoBlock/LimitInfoBlock";
+import DesktopNavigateMenu from "./DesktopNavigateMenu/DesktopNavigateMenu";
+import MobileNavMenu from "./MobileNavMenu/MobileNavMenu";
 
 const Header = () => {
-  const { isAuth } = useSelector((state) => state.isAuth);
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 1024px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 1024px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <header className={style.header + " container"}>
       <figure className={style.logo}>
@@ -18,24 +26,8 @@ const Header = () => {
           <img src={Logo} alt="logo" />
         </Link>
       </figure>
-      <nav className={style.nav}>
-        <Link className={style.link} to={"/"}>
-          Главная
-        </Link>
-        <Link className={style.link} to={"/g"}>
-          Тарифы
-        </Link>
-        <Link className={style.link} to={"/kj"}>
-          FAQ
-        </Link>
-      </nav>
-      <div className={style.wrapper}>
-        {isAuth ? (
-          [<LimitInfoBlock key={"limit"} />, <AuthorizedBlock key={"user"} />]
-        ) : (
-          <AuthorizationBlock />
-        )}
-      </div>
+      {matches && <DesktopNavigateMenu />}
+      {!matches && <MobileNavMenu />}
     </header>
   );
 };

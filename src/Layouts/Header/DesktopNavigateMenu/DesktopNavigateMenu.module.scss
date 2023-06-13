@@ -1,0 +1,33 @@
+@import "../../../assets/style/theme.scss";
+@import "../../../assets/style/mixin.scss";
+
+
+.nav {
+  margin: 0 auto;
+  user-select: none;
+  text-align: center;
+}
+
+.link {
+  letter-spacing: 0.01em;
+  color: $Base-color-2;
+  margin-right: 49px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.nav_menu {
+  display: flex;
+  align-items: center;
+  flex-basis: 80%;
+}
+
+
+.nav,
+.wrapper {
+  flex-basis: 33.333%;
+}

@@ -9,6 +9,9 @@
   color: $Base-color-2;
   position: relative;
   overflow: hidden;
+  @include _1024 {
+    font-size: 8px;
+  }
 
   &::after {
     content: "";
@@ -34,6 +37,9 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    @include _1024 {
+      display: block;
+    }
   }
 }
 

@@ -1,79 +1,56 @@
 import axios from "axios";
 import store from "../store/store";
 import { setHistograms } from "../store/objectSearchData";
-const TOKEN = localStorage.getItem("accessToken");
+import { setDocumentsID } from "../store/documentsID";
+import { setDocumentsItem } from "../store/documentsItem";
+import { objectSearchSchema } from "../helpers/objectSearchSchema";
+
+let token = localStorage.getItem("accessToken");
+window.addEventListener("storage", (event) => {
+  if (event.key === "accessToken") {
+    token = event.newValue
+  }
+});
 
 export const instance = axios.create({
-  baseURL: "https://gateway.scan-interfax.ru/",
-  timeout: 3000,
-  headers: { Authorization: `Bearer ${TOKEN}` },
+  baseURL: "https://gateway.scan-interfax.ru/api/v1",
+  timeout: 100000,
+  headers: { Authorization: `Bearer ${token}` },
 });
 
 export const objectSearch = {
   getData: async (data) => {
     try {
-      const response = await instance.post("api/v1/objectsearch/histograms", {
-        issueDateInterval: {
-          startDate: data.datePickerStart,
-          endDate: data.datePickerEnd,
-        },
-        searchContext: {
-          targetSearchEntitiesContext: {
-            targetSearchEntities: [
-              {
-                type: "company",
-                sparkId: null,
-                entityId: null,
-                inn: data.INN,
-                maxFullness: data.completeness,
-                inBusinessNews: data.businessContext,
-              },
-            ],
-            onlyMainRole: data.mainRole,
-            tonality: data.tonality,
-            onlyWithRiskFactors: data.riskFactors,
-            riskFactors: {
-              and: [],
-              or: [],
-              not: [],
-            },
-            themes: {
-              and: [],
-              or: [],
-              not: [],
-            },
-          },
-          themesFilter: {
-            and: [],
-            or: [],
-            not: [],
-          },
-        },
-        searchArea: {
-          includedSources: [],
-          excludedSources: [],
-          includedSourceGroups: [],
-          excludedSourceGroups: [],
-        },
-        attributeFilters: {
-          excludeTechNews: data.technicalNews,
-          excludeAnnouncements: data.announcements,
-          excludeDigests: data.summaries,
-        },
-        similarMode: "duplicates",
-        limit: data.quantity,
-        sortType: "sourceInfluence",
-        sortDirectionType: "desc",
-        intervalType: "month",
-        histogramTypes: ["totalDocuments", "riskFactors"],
-      });
+      const response = await instance.post(
+        "/objectsearch/histograms",
+        objectSearchSchema(data)
+      );
       const resData = response.data.data;
       store.dispatch(setHistograms(resData));
-      if (response.status === 200) {
-        return true
-      } else {
-        return false
-      }
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  getID: async (data) => {
+    try {
+      const response = await instance.post(
+        "/objectsearch",
+        objectSearchSchema(data)
+      );
+      const resData = response.data.items;
+      store.dispatch(setDocumentsID(resData));
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  getDocuments: async (arr) => {
+    try {
+      const response = await instance.post("/documents", {
+        ids: arr,
+      });
+      const resData = response.data;
+      store.dispatch(setDocumentsItem(resData));
     } catch (error) {
       console.error(error);
     }

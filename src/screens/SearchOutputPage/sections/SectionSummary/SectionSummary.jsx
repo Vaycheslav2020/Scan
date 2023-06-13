@@ -7,8 +7,9 @@ import { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/scss";
-//
-
+// format date
+import dateFormat from "dateformat";
+// loader component
 import Loader from "../../../../shared/Loader/Loader";
 
 const SectionSummary = ({ histograms }) => {
@@ -44,7 +45,7 @@ const SectionSummary = ({ histograms }) => {
                         key={idx}
                         virtualIndex={idx}
                       >
-                        <span>{total.date || risk.date}</span>
+                        <span>{dateFormat((total.date || risk.date), "mm.dd.yyyy")}</span>
                         <span>{total.value || 0}</span>
                         <span>{risk.value || 0}</span>
                       </SwiperSlide>
@@ -57,7 +58,7 @@ const SectionSummary = ({ histograms }) => {
                     key={idx}
                     virtualIndex={idx}
                   >
-                    <span>{total.date}</span>
+                    <span>{dateFormat(total.date, "mm.dd.yyyy")}</span>
                     <span>{total.value || 0}</span>
                     <span>0</span>
                   </SwiperSlide>

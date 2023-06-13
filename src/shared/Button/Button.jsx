@@ -7,17 +7,22 @@ const Button = ({
   className = null,
   styleCustom = null,
   isDisabled = false,
+  isShow = false,
 }) => {
   return (
-    <button
-      type={type}
-      className={style.button + " " + className}
-      onClick={onSend}
-      style={styleCustom}
-      disabled={isDisabled}
-    >
-      {children}
-    </button>
+    <>
+      {isShow ? null : (
+        <button
+          type={type}
+          className={style.button + " " + className}
+          onClick={onSend}
+          style={styleCustom}
+          disabled={isDisabled}
+        >
+          {children}
+        </button>
+      )}
+    </>
   );
 };
 

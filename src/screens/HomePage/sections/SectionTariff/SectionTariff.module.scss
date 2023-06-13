@@ -3,14 +3,28 @@
 
 .cardWrapper {
   display: flex;
+  @include _1200 {
+    flex-direction: column;
+  }
 }
 
 .sectionTariff {
   padding-top: 100px;
   padding-bottom: 100px;
+  @include _1024 {
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
 }
 
 .title {
   font-size: 45px;
   margin-bottom: 50px;
+
+  @include _1024 {
+    margin-bottom: 37px;
+  }
+  @include _576 {
+    font-size: 28px;
+  }
 }

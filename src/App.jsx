@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router";
 import { Navigate } from "react-router-dom";
-import "./App.scss";
 // components
 import Header from "./Layouts/Header/Header";
 import Footer from "./Layouts/Footer/Footer";
@@ -34,7 +33,7 @@ const App = () => {
         <Route
           path="*"
           element={
-            <h1 style={{ fontSize: "220px", textAlign: "center" }}>404</h1>
+            <h1 style={{ fontSize: "220px", textAlign: "center", padding: "100px 0" }}>404</h1>
           }
         />
       </Routes>

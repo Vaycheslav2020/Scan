@@ -5,5 +5,14 @@ export const checkedTariff = createSlice({
   initialState: {
     value: "Beginner",
   },
+  reducers: {
+    setCheckedTariff: (state, value) => {
+      state.checkedTariff = value.payload;
+    },
+    deleteCheckedTariff : (state) => {
+      state.checkedTariff = ""
+    }
+  },
 });
+export const { setCheckedTariff, deleteCheckedTariff } = checkedTariff.actions;
 export default checkedTariff.reducer;

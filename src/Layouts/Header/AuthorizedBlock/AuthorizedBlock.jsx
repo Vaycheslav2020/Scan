@@ -1,20 +1,11 @@
 import style from "./AuthorizedBlock.module.scss";
-//
 import userPhoto from "./icon/user.png";
 //
-import { useDispatch } from "react-redux";
-//
-import {deleteAccountData} from "../../../store/accountData";
-// store
-import { setAuth } from "../../../store/isAuth";
+import { removeState } from "../../../helpers/removeState";
 
 const AuthorizedBlock = () => {
-  const dispatch = useDispatch();
-
   const handleClick = () => {
-    localStorage.clear();
-    dispatch(setAuth());
-    dispatch(deleteAccountData());
+    removeState();
   };
 
   return (

@@ -4,29 +4,10 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 14px;
 }
 
-.logo,
-.nav,
-.wrapper {
+.logo {
   flex-basis: 33.333%;
-}
-
-.nav {
-  margin: 0 auto;
-  user-select: none;
-  text-align: center;
-}
-
-.link {
-  letter-spacing: 0.01em;
-  color: $Base-color-2;
-  margin-right: 49px;
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: end;
 }

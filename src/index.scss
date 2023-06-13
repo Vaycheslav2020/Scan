@@ -112,6 +112,12 @@ code {
 // class
 
 .container {
+  max-width: 1440px;
   padding-left: 60px;
   padding-right: 60px;
+  margin: 0 auto;
+  @include _1024 {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }

@@ -1,13 +1,25 @@
 @import "../../../assets/style/theme.scss";
+@import "../../../assets/style/mixin.scss";
 
 .box {
   display: flex;
   align-items: center;
   user-select: none;
+  @include _1024 {
+    width: 100%;
+    margin-top: auto;
+    flex-direction: column;
+    padding: 0 40px;
+  }
 }
 
 .register {
   opacity: 0.4;
+  @include _1024 {
+    color: $Base-color-3;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
 }
 
 .line {
@@ -16,6 +28,9 @@
   align-self: normal;
   background-color: $Secondary-color-2;
   border-radius: 5px;
+  @include _1024 {
+    display: none;
+  }
 }
 
 .login {
@@ -24,4 +39,12 @@
   background-color: $Secondary-color-2;
   border-radius: 5px;
   color: $Base-color-2;
+  @include _1024 {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
 }

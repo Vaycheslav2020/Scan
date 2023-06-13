@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 //
 import setInfoAccount from "../../../service/accountInfo";
@@ -8,14 +8,27 @@ import style from "./LimitInfoBlock.module.scss";
 import Loader from "../../../shared/Loader/Loader";
 
 const LimitInfoBlock = () => {
-  useEffect(() => {
-      setInfoAccount()
-  }, [setInfoAccount]);
+  const { isAuth } = useSelector((state) => state.isAuth);
   const { accountData } = useSelector((state) => state.accountData);
+  const [dataPrevious, setDataPrevious] = useState(true);
+
+  useEffect(() => {
+    if (accountData) {
+      setDataPrevious((dataPrevious) => (dataPrevious = false));
+    } else {
+      setDataPrevious((dataPrevious) => (dataPrevious = true));
+    }
+  });
+
+  useEffect(() => {
+    if (isAuth) {
+      setInfoAccount();
+    }
+  }, [isAuth, setInfoAccount]);
 
   return (
     <div className={style.box}>
-      {Object.keys(accountData).length === 0 ? <Loader /> : null}
+      {dataPrevious ? <Loader /> : null}
       <div className={style.textWrapper}>
         <p className={style.text}>Использовано компаний</p>
         <span className={style.used}>{accountData?.usedCompanyCount}</span>

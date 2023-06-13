@@ -7,7 +7,16 @@
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  overflow: hidden;
+  @include _375 {
+    align-items: start;
+    img {
+      margin-top: -15px;
+      width: 111px;
+    }
+  }
 }
+
 
 .infoGroup {
   padding: 25px 0;

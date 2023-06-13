@@ -1,0 +1,33 @@
+@import "../../../assets/style/theme.scss";
+@import "../../../assets/style/mixin.scss";
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 78px;
+  background-color: $Base-color-1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.headMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 86px;
+}
+
+.link {
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: $Base-color-3;
+  margin-top: 26px;
+}

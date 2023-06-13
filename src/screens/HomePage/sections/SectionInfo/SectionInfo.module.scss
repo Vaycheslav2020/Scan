@@ -3,10 +3,16 @@
 
 .section {
   padding-top: 100px;
+  @include _1024 {
+    padding-top: 55px;
+  }
 }
 
 .title {
   font-size: 45px;
+  @include _576 {
+    font-size: 28px;
+  }
 }
 
 .slide {
@@ -16,6 +22,9 @@
 .wrapper {
   position: relative;
   padding: 70px 29px 15px 29px;
+  @include _1024 {
+    padding: 32px 19px 0;
+  }
 }
 
 .swiperWrapper {

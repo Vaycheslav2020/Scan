@@ -7,7 +7,11 @@
   border-radius: 10px;
   overflow: hidden;
   margin-right: 38px;
+  margin-bottom: 40px;
   &:last-child {
+    margin-right: 0;
+  }
+  @include _1024 {
     margin-right: 0;
   }
 }
@@ -19,6 +23,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include _1024 {
+    padding: 24px;
+  }
 }
 
 .checkItem {
@@ -34,13 +41,22 @@
 
 .button {
   width: 100%;
+  max-width: 100%;
   font-size: 20px;
   padding: 16px 40px;
+  @include _1024 {
+    padding: 18px 10px;
+    font-size: 18px;
+  }
 }
 
 .list {
   margin-top: 59px;
   margin-bottom: 55px;
+  @include _1024 {
+    margin-top: 37px;
+    margin-bottom: 39px;
+  }
 }
 
 .listItem {
@@ -48,6 +64,9 @@
   margin-top: 5px;
   display: flex;
   align-items: center;
+  @include _576 {
+    font-size: 16px;
+  }
 
   &::before {
     content: url("./icons/check.png");
@@ -59,4 +78,7 @@
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
+  @include _576 {
+    font-size: 18px;
+  }
 }

@@ -1,37 +1,52 @@
 import style from "./Document.module.scss";
+import Image from "./img.png";
+import dateFormat from "dateformat";
+import { getContent } from "../../helpers/documentXmlParse";
 
-const Document = ({ Image }) => {
+const Document = ({ data }) => {
+  const {
+    issueDate,
+    url,
+    source: { name: sourceName },
+    attributes: { isTechNews, isAnnouncement, isDigest, wordCount },
+    title: { text: title },
+    content: { markup },
+  } = data;
+
+  const date = dateFormat(issueDate, "mm.dd.yyyy");
+  const { image, content } = getContent(markup);
+
   return (
-    <div className={style.document}>
-      <div className={style.head}>
-        <span>13.09.2021</span>
-        <a>Комсомольская правда KP.RU</a>
-      </div>
-      <h5 className={style.title}>
-        Скиллфэктори - лучшая онлайн-школа для будущих айтишников
-      </h5>
-      <div className={style.mark}>
-        <span>Технические новости</span>
-      </div>
-      <img className={style.poster} src={Image} alt="Poster" />
-      <p className={style.paragraph}>
-        SkillFactory — школа для всех, кто хочет изменить свою карьеру и жизнь.
-        С 2016 года обучение прошли 20 000+ человек из 40 стран с 4 континентов,
-        самому взрослому студенту сейчас 86 лет. Выпускники работают в Сбере,
-        Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе, Ozon и других
-        топовых компаниях.
-      </p>
+    <div className={style.wrapper_document}>
+      <div className={style.document}>
+        <div className={style.head}>
+          <span>{date}</span>
+          <a href={url}>{sourceName}</a>
+        </div>
+        <h5 className={style.title}>{title}</h5>
+        <div className={style.mark}>
+          <span>
+            {isTechNews
+              ? "Технические новости"
+              : isAnnouncement
+              ? "анонс"
+              : isDigest
+              ? "дайджест"
+              : "новости"}
+          </span>
+        </div>
+        <figure className={style.poster}>
+          <img src={image ? image : Image} alt="Poster" />
+        </figure>
 
-      <p className={style.paragraph}>
-        Принципы SkillFactory: акцент на практике, забота о студентах и ориентир
-        на трудоустройство. 80% обучения — выполнение упражнений и реальных
-        проектов. Каждого студента поддерживают менторы, 2 саппорт-линии и
-        комьюнити курса. А карьерный центр помогает составить резюме,
-        подготовиться к собеседованиям и познакомиться с IT-рекрутерами.
-      </p>
-      <div className={style.footerDocument}>
-        <a className={style.sourceLink}>Читать в источнике</a>
-        <span>2 543 слова</span>
+        <p className={style.paragraph}>{content}</p>
+
+        <div className={style.footerDocument}>
+          <a href={url} className={style.sourceLink}>
+            Читать в источнике
+          </a>
+          <span>{wordCount + " слов"}</span>
+        </div>
       </div>
     </div>
   );

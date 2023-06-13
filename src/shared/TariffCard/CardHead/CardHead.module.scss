@@ -5,15 +5,25 @@
   height: 132px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 30px 10px 30px 24px;
+  @include _576 {
+    align-items: start;
+  }
 }
 
 .title {
   font-weight: 500;
   font-size: 30px;
   margin-bottom: 10px;
+  @include _576 {
+    font-size: 20px;
+  }
 }
 
 .icon {
   margin-left: 10px;
+  @include _576 {
+    width: 15%;
+  }
 }

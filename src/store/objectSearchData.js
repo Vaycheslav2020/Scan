@@ -9,8 +9,11 @@ export const histograms = createSlice({
     setHistograms: (state, data) => {
       state.histograms = data.payload;
     },
+    deleteHistograms: (state) => {
+      state.histograms = [];
+    },
   },
 });
 
-export const { setHistograms } = histograms.actions;
+export const { setHistograms, deleteHistograms } = histograms.actions;
 export default histograms.reducer;

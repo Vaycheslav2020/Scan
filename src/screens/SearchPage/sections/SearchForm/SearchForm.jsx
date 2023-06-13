@@ -32,6 +32,7 @@ const SearchForm = () => {
 
   const onHandleSubmit = (data) => {
     objectSearch.getData(data);
+    objectSearch.getID(data);
     reset();
     navigate("/documents");
   };

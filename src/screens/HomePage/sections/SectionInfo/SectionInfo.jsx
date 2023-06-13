@@ -17,7 +17,7 @@ const SectionInfo = () => {
   return (
     <section className={style.section}>
       <div className="container">
-        <h2 className={style.title}>Почему именно мы</h2>
+        <h2 className={style.title}>Почему <wbr />именно&nbsp;мы</h2>
 
         <div className={style.wrapper}>
           <Swiper
@@ -27,6 +27,17 @@ const SectionInfo = () => {
             navigation={{
               nextEl: ".next",
               prevEl: ".prev",
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
             }}
             className={style.swiperWrapper}
           >
@@ -46,9 +57,6 @@ const SectionInfo = () => {
                 Защита конфеденциальных сведений, не подлежащих разглашению по
                 федеральному законодательству
               </SlideCardInfo>
-            </SwiperSlide>
-            <SwiperSlide className={style.swiperSlide}>
-              <SlideCardInfo className={style.slide}>Slide 4</SlideCardInfo>
             </SwiperSlide>
           </Swiper>
           <button className={style.slideButton + " " + style.prev + " prev"}>

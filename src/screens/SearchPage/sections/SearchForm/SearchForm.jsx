@@ -36,6 +36,7 @@ const SearchForm = () => {
     reset();
     navigate("/documents");
   };
+  
 
   return (
     <form className={style.form} onSubmit={handleSubmit(onHandleSubmit)}>

@@ -5,6 +5,11 @@
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+  @include _1024 {
+    margin-top: 2px;
+    flex-direction: column;
+    justify-content: initial;
+  }
 }
 
 .title {
@@ -12,13 +17,30 @@
   letter-spacing: 0.04em;
   margin-top: 44px;
   margin-bottom: 36px;
+  @include _1024 {
+    margin-top: 0;
+    margin-bottom: 21px;
+  }
+  @include _576 {
+    font-size: 28px;
+    letter-spacing: 0.01em;
+  }
 }
 
 .description {
   font-size: 20px;
   letter-spacing: 0.02em;
+  @include _576 {
+    font-size: 18px;
+    letter-spacing: normal;
+  }
 }
 
 .illustration {
   margin-left: 215px;
+  @include _1024 {
+    margin-left: 0;
+    margin-top: 21px;
+    margin-bottom: 60px;
+  }
 }

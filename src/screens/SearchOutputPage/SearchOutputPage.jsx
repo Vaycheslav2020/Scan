@@ -49,8 +49,9 @@ const SearchOutputPage = () => {
     setEnd((end) => (end += 10));
   };
   return (
-    <main ref={page} className={style.main}>
+    <main className={style.main}>
       <SectionHead />
+      <div ref={page}></div>
       <SectionGeneralSummary />
       <div className="container">
         <h3 className={style.titleList}>Список документов</h3>

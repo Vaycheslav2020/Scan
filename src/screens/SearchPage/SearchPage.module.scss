@@ -6,6 +6,11 @@
   display: flex;
   padding-top: 69px;
   padding-bottom: 64px;
-  padding-right: 0;
+
+  @include _1024 {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
 }
 

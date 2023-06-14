@@ -9,6 +9,9 @@
 .wrapper {
   position: relative;
   padding: 0 29px;
+  @include _1024 {
+    padding: 0 19px;
+  }
 }
 
 .swiperWrapper {

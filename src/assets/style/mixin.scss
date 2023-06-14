@@ -28,6 +28,7 @@
     @content;
   }
 }
+
 @mixin _320 {
   @media screen and (max-width: 320px) {
     @content;

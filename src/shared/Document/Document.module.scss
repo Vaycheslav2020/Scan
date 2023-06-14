@@ -2,12 +2,16 @@
 @import "../../assets/style/mixin.scss";
 
 .wrapper_document {
-  flex: 1 1 50%;
   max-width: 50%;
   padding-bottom: 38px;
-    padding-right: 19px;
-    padding-left: 19px;
-  
+  padding-right: 19px;
+  padding-left: 19px;
+  @include _1024 {
+    max-width: 100%;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .document {
@@ -21,6 +25,9 @@
   &:last-child {
     margin-right: 0;
   }
+  @include _1024 {
+    padding: 19px 24px;
+  }
 }
 
 .head {
@@ -28,9 +35,17 @@
   font-size: 16px;
   letter-spacing: 0.02em;
   color: $Secondary-color-5;
+  @include _576 {
+    margin-bottom: 21px;
+    font-size: 14px;
+    letter-spacing: normal;
+  }
 
   span {
     margin-right: 14px;
+    @include _576 {
+      margin-right: 9px;
+    }
   }
 
   a {
@@ -46,6 +61,10 @@
   font-weight: 500;
   font-size: 26px;
   letter-spacing: 0.02em;
+  @include _576 {
+    font-size: 19px;
+    letter-spacing: 0.01em;
+  }
 }
 
 .mark {
@@ -61,11 +80,14 @@
 
 .poster {
   height: 158px;
-  border-radius: 10px;
   overflow: hidden;
   margin: 14px 0 20px;
+  @include _1024 {
+    height: auto;
+  }
   img {
     width: 100%;
+    border-radius: 10px;
   }
 }
 
@@ -74,18 +96,29 @@
   font-size: 16px;
   letter-spacing: 0.02em;
   opacity: 0.5;
+  @include _576 {
+    font-size: 12px;
+  }
 }
 
 .footerDocument {
   margin-top: auto;
   padding-top: 32px;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
+  @include _1024 {
+    padding-top: 25px;
+  }
 
   span {
     font-size: 16px;
     letter-spacing: 0.02em;
     color: $Secondary-color-5;
+    @include _576 {
+      font-size: 14px;
+      letter-spacing: normal;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import style from "./SectionSummary.module.scss";
+import style from "./SectionSummaryMobile.module.scss";
 //
 import ArrowLeft from "../../../icons/arrow-left.png";
 import ArrowRight from "../../../icons/arrow-right.png";
@@ -12,35 +12,24 @@ import dateFormat from "dateformat";
 // loader component
 import Loader from "../../../../shared/Loader/Loader";
 
-const SectionSummary = ({ histograms }) => {
+const SectionSummaryMobile = ({ histograms }) => {
   return (
     <div className={style.wrapper}>
+      <div className={style.colTitles}>
+        <span>Период</span>
+        <span>Всего</span>
+        <span>Риски</span>
+      </div>
       <Swiper
-        slidesPerView={9}
+        slidesPerView={1}
         modules={[Navigation, Virtual]}
         navigation={{
           nextEl: ".next",
           prevEl: ".prev",
         }}
-        breakpoints={{
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 5,
-              },
-            }}
         className={style.swiperWrapper}
         virtual
       >
-        <SwiperSlide
-          className={style.parametersSlide + " " + style.swiperSlide}
-          data-swiper-slide-index="0"
-        >
-          <span>Период</span>
-          <span>Всего</span>
-          <span>Риски</span>
-        </SwiperSlide>
         {histograms.length ? (
           histograms.map((item, idx) => {
             if (item.histogramType === "totalDocuments") {
@@ -53,7 +42,9 @@ const SectionSummary = ({ histograms }) => {
                         key={idx}
                         virtualIndex={idx}
                       >
-                        <span>{dateFormat((total.date || risk.date), "mm.dd.yyyy")}</span>
+                        <span>
+                          {dateFormat(total.date || risk.date, "mm.dd.yyyy")}
+                        </span>
                         <span>{total.value || 0}</span>
                         <span>{risk.value || 0}</span>
                       </SwiperSlide>
@@ -88,4 +79,4 @@ const SectionSummary = ({ histograms }) => {
     </div>
   );
 };
-export default SectionSummary;
+export default SectionSummaryMobile;

@@ -9,17 +9,25 @@ import { useSelector } from "react-redux";
 import LimitInfoBlock from "../LimitInfoBlock/LimitInfoBlock";
 import AuthorizationBlock from "../AuthorizationBlock/AuthorizationBlock";
 import { useState } from "react";
+import { removeState } from "../../../helpers/removeState";
 
 const MobileNavMenu = () => {
   const { isAuth } = useSelector((state) => state.isAuth);
   const [show, setShow] = useState(false);
+  const handleClick = () => {
+    removeState();
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(false);
+  };
   return (
     <>
       <div className={style.wrapper}>{isAuth ? <LimitInfoBlock /> : null}</div>
       {show ? (
         <nav className={style.nav}>
           <div className={style.headMenu + " container"}>
-            <Link className={style.link} to={"/"}>
+            <Link className={style.link} to={"/"} onClick={handleShow}>
               <img src={logo} alt="logo" />
             </Link>
             <button
@@ -30,16 +38,22 @@ const MobileNavMenu = () => {
               <Close />
             </button>
           </div>
-          <Link className={style.link} to={"/"}>
+          <Link className={style.link} to={"/"} onClick={handleShow}>
             Главная
           </Link>
-          <Link className={style.link} to={"/tariff"}>
+          <Link className={style.link} to={"/tariff"} onClick={handleShow}>
             Тарифы
           </Link>
-          <Link className={style.link} to={"/faq"}>
+          <Link className={style.link} to={"/faq"} onClick={handleShow}>
             FAQ
           </Link>
-          {isAuth ? null : <AuthorizationBlock />}
+          {isAuth ? (
+            <button className={style.logout} onClick={handleClick}>
+              Выйти
+            </button>
+          ) : (
+            <AuthorizationBlock handleShow={handleShow} />
+          )}
         </nav>
       ) : (
         <button

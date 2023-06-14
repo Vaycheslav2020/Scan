@@ -33,7 +33,7 @@ const App = () => {
         <Route
           path="*"
           element={
-            <h1 style={{ fontSize: "220px", textAlign: "center", padding: "100px 0" }}>404</h1>
+            <h1 style={{ fontSize: "5em", textAlign: "center", padding: "100px 0" }}>404</h1>
           }
         />
       </Routes>

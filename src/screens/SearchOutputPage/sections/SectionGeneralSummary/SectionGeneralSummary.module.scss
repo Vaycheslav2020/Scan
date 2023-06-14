@@ -3,12 +3,19 @@
 
 .section {
   padding-bottom: 107px;
+  @include _1024 {
+    padding-bottom: 57px;
+  }
 }
 
 .title {
   font-size: 30px;
   letter-spacing: 0.02em;
   margin-bottom: 17px;
+  @include _576 {
+    font-size: 28px;
+    letter-spacing: 0.01em;
+  }
 }
 
 .textInfo {

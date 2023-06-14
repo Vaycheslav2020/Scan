@@ -8,6 +8,11 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   display: inline-flex;
+  @include _1024 {
+    display: block;
+    padding: 24px 14px;
+    margin-top: 21px;
+  }
 }
 
 .wrapper {
@@ -15,6 +20,9 @@
   flex-direction: column;
   margin-right: 11px;
   &:last-child {
+    margin-right: 0;
+  }
+  @include _1024 {
     margin-right: 0;
   }
 }
@@ -27,6 +35,11 @@
   & input {
     width: 242px;
     margin-top: 20px;
+    @include _1024 {
+      width: 100%;
+      text-align: center;
+
+    }
   }
 
   & span {
@@ -47,6 +60,9 @@
 .select {
   width: 242px;
   margin-top: 20px;
+  @include _1024 {
+    width: 100%;
+  }
 }
 
 .dateWrapper {
@@ -64,6 +80,9 @@
 
 .pickerBox {
   display: flex;
+  @include _1024 {
+    display: block;
+  }
 }
 
 .pickerWrapper {
@@ -74,6 +93,10 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @include _1024 {
+    width: 100%;
   }
 
   &::after {
@@ -110,6 +133,13 @@
   margin-left: auto;
   & button {
     width: 305px;
+  }
+  @include _1024 {
+    margin-top: 14px;
+    margin-left: 0;
+    & button {
+      width: 100%;
+    }
   }
 }
 

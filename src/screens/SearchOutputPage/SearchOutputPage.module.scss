@@ -11,7 +11,8 @@
 .documentList {
   display: flex;
   padding-top: 58px;
-  @include _1024 {
+  flex-wrap: wrap;
+  @include _1200 {
     flex-direction: column;
     padding-top: 34px;
   }

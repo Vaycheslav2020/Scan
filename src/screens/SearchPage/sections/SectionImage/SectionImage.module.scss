@@ -15,4 +15,8 @@
 
 .pictures {
   margin-left: 55px;
+  @include _1024 {
+    max-width: 475px;
+    margin: 24px auto 0;
+  }
 }

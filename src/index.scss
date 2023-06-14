@@ -36,6 +36,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -116,6 +122,11 @@ code {
   padding-left: 60px;
   padding-right: 60px;
   margin: 0 auto;
+  overflow-x: hidden;
+  @include _1200 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   @include _1024 {
     padding-left: 14px;
     padding-right: 14px;

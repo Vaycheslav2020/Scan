@@ -4,7 +4,25 @@
 .sectionHead {
   padding: 60px 540px 0 0;
   background: url("../../images/home-image-1.png") top right no-repeat;
-  @include _1024 {
+
+  @include _1200 {
+    padding: 30px 0 900px;
+    background: url("../../images/home-image-1.png") bottom center no-repeat;
+    background-size: contain;
+  }
+
+  @include _768 {
+    padding: 30px 0 650px;
+    background: url("../../images/home-image-1.png") bottom center no-repeat;
+    background-size: contain;
+  }
+
+  @include _576 {
+    padding: 30px 0 540px;
+    background: url("../../images/home-image-1.png") bottom center no-repeat;
+    background-size: contain;
+  }
+  @include _375 {
     padding: 30px 0 400px;
     background: url("../../images/home-image-1.png") bottom center no-repeat;
     background-size: contain;

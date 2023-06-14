@@ -8,8 +8,8 @@ import Button from "../../../../shared/Button/Button";
 const SectionHead = () => {
   const { isAuth } = useSelector((state) => state.isAuth);
   return (
-    <section className={style.sectionHead}>
-      <div className="container">
+    <section className=" container">
+      <div className={style.sectionHead}>
         <h1 className={style.title}>
           сервис по поиску <br /> публикаций <br /> о компании <br /> по его ИНН
         </h1>

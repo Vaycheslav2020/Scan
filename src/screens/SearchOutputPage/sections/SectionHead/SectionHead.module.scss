@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
-  @include _1024 {
+  @include _768 {
     margin-top: 2px;
     flex-direction: column;
     justify-content: initial;
@@ -39,6 +39,9 @@
 .illustration {
   margin-left: 215px;
   @include _1024 {
+    margin-left: 60px;
+  }
+  @include _768 {
     margin-left: 0;
     margin-top: 21px;
     margin-bottom: 60px;

@@ -8,10 +8,17 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   display: inline-flex;
+
   @include _1024 {
     display: block;
-    padding: 24px 14px;
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 21px;
+  }
+
+  @include _576 {
+    padding: 24px 14px;
   }
 }
 
@@ -38,7 +45,6 @@
     @include _1024 {
       width: 100%;
       text-align: center;
-
     }
   }
 
@@ -139,6 +145,7 @@
     margin-left: 0;
     & button {
       width: 100%;
+      max-width: 100%;
     }
   }
 }

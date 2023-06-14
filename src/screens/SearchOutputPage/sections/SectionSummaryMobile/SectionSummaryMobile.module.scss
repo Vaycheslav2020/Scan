@@ -8,11 +8,11 @@
 
 .wrapper {
   position: relative;
-  padding: 0 19px;
+  padding: 0 14px;
 }
 
 .colTitles {
-  padding: 23px 15px;
+  padding: 23px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,9 +21,17 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 
   & > span {
+    width: 33.333%;
+    padding: 0 15px;
+    text-align: center;
+    white-space: nowrap;
     font-size: 18px;
     letter-spacing: 0.01em;
     color: $Base-color-3;
+    @include _576 {
+      padding: 0 5px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -34,7 +42,7 @@
 
 .swiperSlide {
   height: auto !important;
-  padding: 23px 15px;
+  padding: 23px 0;
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -42,11 +50,16 @@
   position: relative;
 
   & span {
-    flex-grow: 1;
+    width: 33.333%;
+    padding: 0 15px;
     text-align: center;
     white-space: nowrap;
     font-size: 18px;
     letter-spacing: 0.02em;
+    @include _576 {
+      padding: 0 5px;
+      font-size: 16px;
+    }
 
     &:first-child {
       flex-grow: 0;

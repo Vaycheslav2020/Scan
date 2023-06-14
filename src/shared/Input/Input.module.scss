@@ -8,6 +8,9 @@
   font-size: 16px;
   letter-spacing: 0.02em;
   color: $Secondary-color-5;
+  @include _576 {
+    font-size: 14px;
+  }
 
   & input {
     width: 100%;

@@ -1,26 +1,38 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+// 
 import style from "./MobileNavMenu.module.scss";
 import logo from "./white-logo.png";
 import { ReactComponent as Close } from "./close.svg";
 import { ReactComponent as Burger } from "./burger.svg";
 //
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 //
 import LimitInfoBlock from "../LimitInfoBlock/LimitInfoBlock";
 import AuthorizationBlock from "../AuthorizationBlock/AuthorizationBlock";
-import { useState } from "react";
 import { removeState } from "../../../helpers/removeState";
 
 const MobileNavMenu = () => {
   const { isAuth } = useSelector((state) => state.isAuth);
   const [show, setShow] = useState(false);
+
   const handleClick = () => {
     removeState();
     setShow(false);
   };
+
   const handleShow = () => {
     setShow(false);
   };
+
+  useEffect(()=>{
+    if (show) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'initial'
+    }
+  },[show])
+
   return (
     <>
       <div className={style.wrapper}>{isAuth ? <LimitInfoBlock /> : null}</div>

@@ -18,13 +18,13 @@ const LimitInfoBlock = () => {
     } else {
       setDataPrevious((dataPrevious) => (dataPrevious = true));
     }
-  });
+  }, [accountData]);
 
   useEffect(() => {
-    if (isAuth) {
+    if (isAuth === true) {
       setInfoAccount();
     }
-  }, [isAuth, setInfoAccount]);
+  }, [isAuth]);
 
   return (
     <div className={style.box}>

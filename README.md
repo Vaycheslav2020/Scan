@@ -1,4 +1,4 @@
-<a href="https://vercel-deploy-scan.vercel.app/">ссылка на проект</a>
+<a href="[https://vercel-deploy-scan.vercel.app/](https://vercel-depploy-scan.vercel.app/)">ссылка на проект</a>
 
 <h3>Клиентская часть сервиса состоит из:</h3>
 

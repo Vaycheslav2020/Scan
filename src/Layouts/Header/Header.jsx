@@ -1,7 +1,7 @@
-import style from "./Header.module.scss";
-//
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+//
+import style from "./Header.module.scss";
 // logo
 import Logo from "../images/header-logo.png";
 // components

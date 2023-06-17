@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// 
+//
 import style from "./SectionImage.module.scss";
 //
 import Background from "../../images/home-image-2.png";
@@ -18,8 +18,20 @@ const SectionImage = () => {
   return (
     <section className={style.section}>
       <figure className="container">
-        {matches && <img className={style.image} src={Background} alt="background image" />}
-        {!matches && <img className={style.image} src={MobileBackground} alt="background image" />}
+        {matches && (
+          <img
+            className={style.image}
+            src={Background}
+            alt="background image"
+          />
+        )}
+        {!matches && (
+          <img
+            className={style.image}
+            src={MobileBackground}
+            alt="background image"
+          />
+        )}
       </figure>
     </section>
   );

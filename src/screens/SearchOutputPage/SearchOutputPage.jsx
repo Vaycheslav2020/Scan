@@ -19,13 +19,14 @@ const SearchOutputPage = () => {
   const [showBtn, setShowBtn] = useState(true);
   //
   const sss = () => {
-  page.current.scrollIntoView({
-    behavior: "smooth",
-    top: 0
-  });}
-  useEffect(()=>{
-    sss()
-  },[])
+    page.current.scrollIntoView({
+      behavior: "smooth",
+      top: 0,
+    });
+  };
+  useEffect(() => {
+    sss();
+  }, []);
 
   useEffect(() => {
     if (documentsID.length > documentsItem.length) {

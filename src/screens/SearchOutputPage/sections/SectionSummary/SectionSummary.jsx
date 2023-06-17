@@ -23,13 +23,13 @@ const SectionSummary = ({ histograms }) => {
           prevEl: ".prev",
         }}
         breakpoints={{
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 5,
-              },
-            }}
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+        }}
         className={style.swiperWrapper}
         virtual
       >
@@ -53,7 +53,9 @@ const SectionSummary = ({ histograms }) => {
                         key={idx}
                         virtualIndex={idx}
                       >
-                        <span>{dateFormat((total.date || risk.date), "mm.dd.yyyy")}</span>
+                        <span>
+                          {dateFormat(total.date || risk.date, "mm.dd.yyyy")}
+                        </span>
                         <span>{total.value || 0}</span>
                         <span>{risk.value || 0}</span>
                       </SwiperSlide>

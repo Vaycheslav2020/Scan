@@ -1,4 +1,4 @@
- export const objectSearchSchema = (data) => {
+export const objectSearchSchema = (data) => {
   return {
     issueDateInterval: {
       startDate: data.datePickerStart,

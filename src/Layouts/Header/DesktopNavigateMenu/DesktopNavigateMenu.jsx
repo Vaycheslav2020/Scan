@@ -1,14 +1,12 @@
-import style from "./DesktopNavigateMenu.module.scss";
-// 
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import style from "./DesktopNavigateMenu.module.scss";
 // component
 import LimitInfoBlock from "../LimitInfoBlock/LimitInfoBlock";
 import AuthorizationBlock from "../AuthorizationBlock/AuthorizationBlock";
 import AuthorizedBlock from "../AuthorizedBlock/AuthorizedBlock";
-import { useSelector } from "react-redux";
 
 const DesktopNavigateMenu = () => {
-  
   const { isAuth } = useSelector((state) => state.isAuth);
   return (
     <>
@@ -31,7 +29,7 @@ const DesktopNavigateMenu = () => {
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default DesktopNavigateMenu;

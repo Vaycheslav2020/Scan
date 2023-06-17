@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-// 
+//
 import style from "./MobileNavMenu.module.scss";
 import logo from "./white-logo.png";
 import { ReactComponent as Close } from "./close.svg";
@@ -25,13 +25,13 @@ const MobileNavMenu = () => {
     setShow(false);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     if (show) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'initial'
+      document.body.style.overflow = "initial";
     }
-  },[show])
+  }, [show]);
 
   return (
     <>

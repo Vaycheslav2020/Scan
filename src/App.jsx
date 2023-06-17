@@ -28,18 +28,28 @@ const App = () => {
         />
         <Route
           path="/documents"
-          element={isAuth ? <SearchOutputPage /> : <Navigate to="/account/login" />}
+          element={
+            isAuth ? <SearchOutputPage /> : <Navigate to="/account/login" />
+          }
         />
         <Route
           path="*"
           element={
-            <h1 style={{ fontSize: "5em", textAlign: "center", padding: "100px 0" }}>404</h1>
+            <h1
+              style={{
+                fontSize: "5em",
+                textAlign: "center",
+                padding: "100px 0",
+              }}
+            >
+              404
+            </h1>
           }
         />
       </Routes>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -6,9 +6,9 @@ const Loader = () => {
     <div className={style.loader}>
       <figure className={style.spin}>
         <img src={Spin} alt="spin image" />
-      </figure> 
+      </figure>
     </div>
-  )
-}
+  );
+};
 
 export default Loader;

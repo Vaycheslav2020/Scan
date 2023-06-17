@@ -7,7 +7,6 @@ import CardPrice from "./CardPrice/CardPrice";
 import Button from "../Button/Button";
 
 const TariffCard = (props) => {
-  
   const check = useSelector((state) => state.activeTariff.value);
   const {
     title,

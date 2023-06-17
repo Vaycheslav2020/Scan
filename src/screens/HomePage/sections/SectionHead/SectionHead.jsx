@@ -1,7 +1,7 @@
-import style from "./SectionHead.module.scss";
-//
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+// 
+import style from "./SectionHead.module.scss";
 // components
 import Button from "../../../../shared/Button/Button";
 

@@ -3,7 +3,7 @@ import style from "./LoginPage.module.scss";
 // components
 import SectionTitle from "./sections/SectionTitle/SectionTitle";
 import SectionForm from "./sections/SectionForm/SectionForm";
-// 
+//
 import Characters from "./images/Characters.png";
 
 const LoginPage = () => {

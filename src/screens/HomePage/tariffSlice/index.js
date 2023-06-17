@@ -9,9 +9,9 @@ export const checkedTariff = createSlice({
     setCheckedTariff: (state, value) => {
       state.checkedTariff = value.payload;
     },
-    deleteCheckedTariff : (state) => {
-      state.checkedTariff = ""
-    }
+    deleteCheckedTariff: (state) => {
+      state.checkedTariff = "";
+    },
   },
 });
 export const { setCheckedTariff, deleteCheckedTariff } = checkedTariff.actions;

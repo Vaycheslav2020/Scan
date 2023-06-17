@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 //
-import setInfoAccount from "../../../service/accountInfo";
+import { setAccountData } from "../../../store/accountData";
 //
 import style from "./LimitInfoBlock.module.scss";
 //
 import Loader from "../../../shared/Loader/Loader";
 
 const LimitInfoBlock = () => {
+  console.log("render limit");
   const { isAuth } = useSelector((state) => state.isAuth);
   const { accountData } = useSelector((state) => state.accountData);
   const [dataPrevious, setDataPrevious] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (accountData) {
@@ -22,7 +25,18 @@ const LimitInfoBlock = () => {
 
   useEffect(() => {
     if (isAuth === true) {
-      setInfoAccount();
+      axios
+        .get("https://gateway.scan-interfax.ru/api/v1/account/info", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            const data = response.data.eventFiltersInfo;
+            dispatch(setAccountData(data));
+          }
+        });
     }
   }, [isAuth]);
 

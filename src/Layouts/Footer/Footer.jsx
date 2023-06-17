@@ -3,7 +3,6 @@ import style from "./Footer.module.scss";
 import Logo from "../images/footer-logo.png";
 
 const Footer = () => {
-  
   return (
     <footer className={style.footer + " container"}>
       <img src={Logo} alt="Logo" />

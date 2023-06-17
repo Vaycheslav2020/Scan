@@ -17,7 +17,10 @@ const SectionInfo = () => {
   return (
     <section className={style.section}>
       <div className="container">
-        <h2 className={style.title}>Почему <wbr />именно&nbsp;мы</h2>
+        <h2 className={style.title}>
+          Почему <wbr />
+          именно&nbsp;мы
+        </h2>
 
         <div className={style.wrapper}>
           <Swiper

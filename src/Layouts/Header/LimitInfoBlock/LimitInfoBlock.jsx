@@ -9,7 +9,6 @@ import style from "./LimitInfoBlock.module.scss";
 import Loader from "../../../shared/Loader/Loader";
 
 const LimitInfoBlock = () => {
-  console.log("render limit");
   const { isAuth } = useSelector((state) => state.isAuth);
   const { accountData } = useSelector((state) => state.accountData);
   const [dataPrevious, setDataPrevious] = useState(true);

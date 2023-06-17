@@ -5,12 +5,10 @@ import { setDocumentsID } from "../store/documentsID";
 import { setDocumentsItem } from "../store/documentsItem";
 import { objectSearchSchema } from "../helpers/objectSearchSchema";
 
-let token = localStorage.getItem("accessToken");
-
 export const instance = axios.create({
   baseURL: "https://gateway.scan-interfax.ru/api/v1",
   timeout: 100000,
-  headers: { Authorization: `Bearer ${token}` },
+  headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` },
 });
 
 export const objectSearch = {

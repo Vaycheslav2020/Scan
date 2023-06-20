@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-// 
+//
 import style from "./SectionHead.module.scss";
 // components
 import Button from "../../../../shared/Button/Button";
 
 const SectionHead = () => {
   const { isAuth } = useSelector((state) => state.isAuth);
+  const navigate = useNavigate();
   return (
     <section className=" container">
       <div className={style.sectionHead}>
@@ -18,9 +19,13 @@ const SectionHead = () => {
           электронную почту.
         </p>
         {isAuth ? (
-          <Link to={"/search"}>
-            <Button>Запросить данные</Button>
-          </Link>
+          <Button
+            onSend={() => {
+              navigate("/search");
+            }}
+          >
+            Запросить данные
+          </Button>
         ) : null}
       </div>
     </section>

@@ -48,6 +48,10 @@
     padding: 18px 10px;
     font-size: 18px;
   }
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .list {

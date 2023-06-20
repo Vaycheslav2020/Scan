@@ -2,14 +2,19 @@ import style from "./SectionForm.module.scss";
 //
 import { Link } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 // service
 import { onAuth } from "../../../../service/authorization";
+import { deleteErrorAuth } from "../../../../store/errorAuth";
 // components
 import Input from "../../../../shared/Input/Input";
 import Button from "../../../../shared/Button/Button";
 import Accounts from "../Accounts/Accounts";
 
 const SectionForm = () => {
+  const errorAuth = useSelector((state) => state.errorAuth);
+  const isAuth = useSelector((state) => state.isAuth);
+  const dispatch = useDispatch();
   const {
     handleSubmit,
     control,
@@ -19,8 +24,11 @@ const SectionForm = () => {
   } = useForm({ mode: "onChange" });
 
   const onHandleSubmit = () => {
-    onAuth(getValues("login"), getValues("password"));
-    reset();
+    dispatch(deleteErrorAuth());
+    dispatch(onAuth(getValues("login"), getValues("password")));
+    if (isAuth) {
+      reset();
+    }
   };
 
   return (
@@ -53,7 +61,7 @@ const SectionForm = () => {
             onInputChange={onChange}
             inputValue={value}
             errorMassage={error?.message}
-            error={error}
+            error={error || errorAuth.errorAuth}
           />
         )}
       />
@@ -77,10 +85,12 @@ const SectionForm = () => {
             onInputChange={onChange}
             inputValue={value}
             errorMassage={error?.message}
-            error={error}
+            error={error || errorAuth.errorAuth}
           />
         )}
       />
+
+      <p className={style.error}>{errorAuth ? errorAuth.errorAuth : null}</p>
 
       <Button isDisabled={!isDirty || !isValid} className={style.button}>
         Войти

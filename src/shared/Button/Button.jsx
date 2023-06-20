@@ -4,7 +4,7 @@ const Button = ({
   type,
   children,
   onSend,
-  className = null,
+  className = "",
   styleCustom = null,
   isDisabled = false,
   isShow = false,

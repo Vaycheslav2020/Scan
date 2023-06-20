@@ -60,7 +60,7 @@ const TariffCard = (props) => {
           <Button
             className={style.button}
             styleCustom={
-              checked ? { background: "#D2D2D2", color: "#000000" } : null
+              checked ? { backgroundColor: "#D2D2D2", color: "#000000" } : null
             }
           >
             {checked ? "Перейти в личный кабинет" : "Подробнее"}

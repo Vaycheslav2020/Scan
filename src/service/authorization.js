@@ -1,6 +1,7 @@
 import axios from "axios";
 import store from "../store/store";
 import { setAuth } from "../store/isAuth";
+import errorAuth, { setErrorAuth, deleteErrorAuth } from "../store/errorAuth";
 
 export async function onAuth(login, pass) {
   try {
@@ -15,8 +16,11 @@ export async function onAuth(login, pass) {
       localStorage.setItem("accessToken", response.data.accessToken);
       localStorage.setItem("expire", response.data.expire);
       store.dispatch(setAuth());
+      if (errorAuth) {
+        store.dispatch(deleteErrorAuth())
+      }
     }
   } catch (error) {
-    console.error(error);
+    store.dispatch(setErrorAuth(error.response.data.message));
   }
 }
